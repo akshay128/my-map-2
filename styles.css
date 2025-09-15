@@ -1,0 +1,145 @@
+/* My Map 2 Styles */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.header p {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+.map-container {
+    height: calc(100vh - 120px);
+    width: 100%;
+    position: relative;
+    border-radius: 8px;
+    margin: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+.controls {
+    position: absolute;
+    top: 130px;
+    right: 20px;
+    z-index: 1000;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    min-width: 150px;
+}
+
+.controls h3 {
+    margin: 0 0 10px 0;
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
+}
+
+.controls button {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+    padding: 10px 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.controls button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.controls button:active {
+    transform: translateY(0);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .header p {
+        font-size: 1rem;
+    }
+    
+    .controls {
+        top: 110px;
+        right: 10px;
+        padding: 10px;
+        min-width: 120px;
+    }
+    
+    .controls button {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .map-container {
+        height: calc(100vh - 100px);
+        margin: 5px;
+    }
+}
+
+/* Custom popup styles */
+.leaflet-popup-content-wrapper {
+    border-radius: 8px;
+}
+
+.leaflet-popup-content {
+    margin: 15px;
+    line-height: 1.6;
+}
+
+/* Loading indicator */
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2000;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    display: none;
+}
+
+.loading.show {
+    display: block;
+}
